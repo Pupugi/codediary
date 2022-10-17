@@ -1,0 +1,12 @@
+extend base
+
+block main
+    form(method="POST")
+        input(name="title", type="text",value=`${contents.title}` placeholder="new title", required)
+        select(name="category")
+            option(value="process") Process
+            option(value="skills") Skills
+            option(value="errors") Errors
+            option(value="reviews") Reviews
+        textarea(name="paragraph",type="text", cols="30", rows="30", placeholder="wright here", required)=contents.paragraph
+        button Submit

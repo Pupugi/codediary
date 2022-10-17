@@ -1,0 +1,31 @@
+extend base
+
+block main
+    div.detail_box#detail_box(data-id=content._id)
+        p(style = 'white-space: pre-wrap')=content.paragraph
+        div.meta_box
+            small 조회수 #{content.meta.views}
+            small 댓글 #{content.meta.comments}
+            small=content.createdAt
+            small.uploader Uploaded by 
+                a(href=`/user/${content.owner._id}`)=content.owner.nickname
+    if loggedIn
+        div.comment_writing_box
+            form.comment_writing_form#commentForm
+                textarea(cols="10", rows="5")
+                button Submit
+    div.comment_showing_box
+        ul
+            each comment in content.comments.reverse()
+                li(data-id=comment._id)
+                    p(style = 'white-space: pre-wrap')=comment.text
+                    if String(comment.owner._id) === String(loggedInUser._id)
+                        span#comment_span ❌
+    if String(content.owner._id) === String(loggedInUser._id)
+        br
+        a(href=`${content._id}/edit`) Edit Contents &rarr;
+        br
+        a(href=`${content._id}/delete`) Delete Contents &rarr;
+block scripts
+    if loggedIn
+        script(src="/static/js/comment.js")

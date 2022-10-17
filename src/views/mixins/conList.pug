@@ -1,0 +1,11 @@
+mixin conList(contents)
+    ul
+        each content in contents.reverse()
+            li.mixin__list
+                a(href=`/contents/${content.id}`)=content.title
+                div.contents__numbers
+                    span 조회수 #{content.meta.views}
+                    span 댓글 #{content.meta.comments}
+            hr
+        else
+            li No Contents

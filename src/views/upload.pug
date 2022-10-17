@@ -1,0 +1,12 @@
+extends base
+
+block main
+    form(method="POST") 
+        input(name="title", type="text", placeholder="title", required)
+        select(name="category") 
+            option(value="process") Process
+            option(value="skills") Skills 
+            option(value="errors") Errors
+            option(value="reviews") Reviews
+        textarea(name="paragraph", cols="30", rows="30", placeholder="wright here", required)
+        button Submit

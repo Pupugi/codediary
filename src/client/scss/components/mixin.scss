@@ -1,0 +1,14 @@
+.mixin__list {
+  display: flex;
+  justify-content: space-between;
+  .contents__numbers {
+    font-size: 13px;
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    span {
+      margin-top: 3px;
+      opacity: 0.3;
+    }
+  }
+}

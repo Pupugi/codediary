@@ -1,0 +1,37 @@
+doctype html
+html(lang="ko")
+    head
+        link(rel="stylesheet", href="/static/css/styles.css")
+        title Code-Diary
+    body
+        if messages.error
+            div.message
+                span=messages.error
+        header
+            a(href="/")
+                h1=pageTitle
+            div.nav_box
+                div  
+                nav
+                    ul
+                        li
+                            a(href="/") Home
+                        if (loggedIn)
+                            li
+                                a(href="/user/edit") Edit Profile
+                            li
+                                a(href=`/user/${loggedInUser._id}`) #{loggedInUser.nickname}'s Profile
+                            li
+                                a(href="/user/logout") Logout
+                            li
+                                a(href="/contents/upload") Upload Contents
+                        else
+                            li
+                                a(href="/login") Login
+                            li
+                                a(href="/join") Join
+        main
+            block main
+    include partials/footer
+    script(src="/static/js/main.js")
+    block scripts

@@ -1,0 +1,11 @@
+extends base
+
+block main
+    if errorMessage
+        span=errorMessage
+    form(method="POST")
+        input(name="username", type="text", placeholder="Username", required)
+        input(name="password", type="password", placeholder="Password", required)
+        button Submit
+        br
+        a(href="https://github.com/login/oauth/authorize?client_id=eb96633ab97eec1e11c3&scope=user:email read:user") Continue with Github &rarr;

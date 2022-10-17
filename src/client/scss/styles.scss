@@ -1,0 +1,56 @@
+@import "./config/_variables.scss";
+@import "./config/_reset.scss";
+
+@import "./components/base.scss";
+@import "./components/footer.scss";
+@import "./components/forms.scss";
+@import "./components/mixin.scss";
+
+@import "./screens/home.scss";
+@import "./screens/detail.scss";
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: $bg;
+  color: white;
+}
+
+main {
+  max-width: 70%;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+@keyframes goAway {
+  from {
+    transform: none;
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+}
+
+.message {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  max-width: 200px;
+  padding: 10px 20px;
+  border-radius: 10000px;
+  text-align: center;
+  animation: goAway 0.5s ease-in-out forwards;
+  animation-delay: 3s;
+  background-color: tomato;
+  color: white;
+}

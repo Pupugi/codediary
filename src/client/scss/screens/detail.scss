@@ -1,0 +1,45 @@
+.detail_box {
+  p {
+    line-height: 200%;
+  }
+  .meta_box {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    small {
+      margin-bottom: 5px;
+      &:not(.uploader) {
+        opacity: 0.4;
+      }
+    }
+    .uploader {
+      opacity: 0.8;
+    }
+  }
+}
+
+.comment_showing_box {
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+  li {
+    padding: 20px;
+    padding-left: 30px;
+    border-radius: 9999px;
+    background-color: white;
+    color: black;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p {
+      line-height: 150%;
+    }
+    span {
+      cursor: pointer;
+    }
+  }
+}
