@@ -44,7 +44,7 @@ export const detail = async (req, res) => {
   const content = await Contents.findById(id)
     .populate("owner")
     .populate("comments");
-  fetch(`http://localhost:4000/api/contents/${id}/view`, {
+  fetch(`/api/contents/${id}/view`, {
     method: "POST",
   });
   return res.render("detail", {
