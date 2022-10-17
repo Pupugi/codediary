@@ -44,9 +44,12 @@ export const detail = async (req, res) => {
   const content = await Contents.findById(id)
     .populate("owner")
     .populate("comments");
-  fetch(`/api/contents/${id}/view`, {
-    method: "POST",
-  });
+  fetch(
+    `https://code-diary-first-version.herokuapp.com/api/contents/${id}/view`,
+    {
+      method: "POST",
+    }
+  );
   return res.render("detail", {
     pageTitle: `${content.title}`,
     content,
