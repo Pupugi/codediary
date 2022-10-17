@@ -19,7 +19,7 @@ app.use(
     secret: process.env.COOCIE_SECRET,
     resave: false,
     saveUninitialized: false,
-    store: MongoStore.create({ mongoUrl: process.env.DB_RUL }),
+    store: MongoStore.create({ mongoUrl: process.env.DB_URL }),
   })
 );
 
